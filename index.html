@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLG | Energy Transition Research Portfolio</title>
+    <style>
+        /* Inter Font from Goole Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* VARIABLES */
+        :root {
+            --accent-color: #47a575;
+            --accent-color-light: #6fcf9d;
+            --accent-color-dark: #337b56;
+            --background-color: #2a2a31;
+            --text-color: #fff;
+            --text-color-muted: #b9b9b9;
+            --card-bg: #35353f;
+            --card-border: #484851;
+
+            /* spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 32px;
+            --space-xl: 64px;
+            --space-xxl: 128px;
+
+            /* typography */
+            --font-size-xs: 14px;
+            --font-size-sm: 16px;
+            --font-size-md: 18px;
+            --font-size-lg: 24px;
+            --font-size-xl: 28px;
+            --font-size-xxl: 72px;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            padding: 0 20px;
+            color: var(--text-color);
+        }
+
+        #page {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: var(--space-md);
+        }
+
+        /* LOGO AND NAVIGATION */
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        .logo {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+        }
+
+        nav ul li a:link,
+        nav ul li a:visited {
+            color: var(--text-color);
+            opacity: 0.7;
+            text-decoration: none;
+            transition: opacity 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        /* TYPOGRAPHY */
+
+        a:link,
+        a:visited {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color-light);
+        }
+
+        h1 {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--space-sm);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: var(--font-size-xl);
+            color: var(--accent-color);
+            margin-bottom: var(--space-lg);
+            font-weight: 600;
+            margin-top: var(--space-xl);
+        }
+
+        h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-sm);
+            font-weight: 500;
+        }
+
+        p {
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        /* SECTIONS  */
+
+        #about {
+            margin-top: var(--space-xxl);
+        }
+
+        #about h1 {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--space-sm);
+        }
+
+        #about p {
+            font-size: var(--font-size-xl);
+            font-weight: 200;
+            line-height: 1.4;
+            color: var(--text-color);
+        }
+
+        section {
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-xxl);
+        }
+
+        .card {
+            background: linear-gradient(90deg, var(--card-bg) 0%, #3d3b3e 50%, #3d3b3e 50%);
+            border-radius: 20px;
+            padding: var(--space-xs) var(--space-lg) var(--space-lg);
+            border: 0.5px solid var(--card-border);
+            margin-bottom: var(--space-lg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card p {
+            margin: var(--space-xs) 0;
+            font-size: var(--font-size-xs);
+        }
+
+        /* EXPERTISE */
+
+        #expertise p {
+            line-height: 1.8;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .expertise-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: var(--space-lg);
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .expertise-item h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* PUBLICATIONS */
+        .publication {
+            padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .publication h3 {
+            margin-top: 0;
+        }
+
+        .publication .year {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .publication .authors {
+            color: var(--text-color-muted);
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+        }
+
+        .publication .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: var(--space-sm);
+        }
+
+        .publication .keyword {
+            background-color: rgba(71, 165, 117, 0.2);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color-light);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        /* PROJECTS */
+
+        .project {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto;
+            column-gap: var(--space-lg);
+            padding: var(--space-md) var(--space-lg);
+        }
+
+        .project .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project .icon svg {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            fill: var(--accent-color);
+        }
+
+        .project h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        /* TOOLS */
+        #tools .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .tool-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: var(--space-md);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-item svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: var(--space-sm);
+            fill: var(--accent-color);
+        }
+
+        .tool-item h4 {
+            margin: var(--space-sm) 0;
+        }
+
+        /* CONTACT  */
+
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: var(--font-size-lg);
+            font-weight: 200;
+            line-height: 1.4;
+            color: var(--text-color);
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: var(--space-md);
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--accent-color-light);
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: var(--space-xl);
+            padding: 0 0 var(--space-lg);
+            color: var(--text-color-muted);
+            text-align: center;
+        }
+
+        footer .social {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .social a svg {
+            fill: var(--text-color-muted);
+            transition: fill 0.3s ease;
+        }
+
+        footer .social a:hover svg {
+            fill: var(--accent-color);
+        }
+
+        /* MEDIA QUERIES */
+
+        @media screen and (max-width: 768px) {
+            :root {
+                --font-size-xxl: 48px;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .project .icon {
+                margin-bottom: var(--space-md);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            :root {
+                --font-size-xs: 14px;
+                --font-size-sm: 16px;
+                --font-size-md: 18px;
+                --font-size-lg: 20px;
+                --font-size-xl: 24px;
+                --font-size-xxl: 36px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: var(--space-md);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 14px;
+                align-items: flex-start;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #tools .tools-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            section {
+                margin-top: var(--space-xl);
+                margin-bottom: var(--space-lg);
+            }
+
+            h2 {
+                margin-top: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+
+        <header>
+            <div class="logo">
+                <a href="/">ML<span>G</span> | Energy Intelligence</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#expertise">Areas of Expertise</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div id="about">
+                <h1>
+                    Machine Learning for Sustainable Energy Transition
+                </h1>
+                <p>
+                    The <a href="https://mlg.ulb.ac.be" target="_blank">Machine Learning Group</a> at ULB specializes in developing cutting-edge intelligent systems that address key challenges in energy transition. Our team leverages advanced data analytics, time series forecasting, and machine learning to enable smarter, more resilient, and decentralized energy systems for urban environments.
+                </p>
+            </div>
+
+            <section id="expertise">
+                <h2>Areas of Expertise</h2>
+
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Renewable Energy Forecasting</h3>
+                        <p>Developing state-of-the-art predictive models for wind and solar power generation to enable efficient integration of renewable energy sources in urban grids.</p>
+                    </div>
+
+                    <div class="expertise-item">
+                        <h3>Energy Load Prediction</h3>
+                        <p>Creating accurate short and medium-term electricity demand forecasting systems to optimize grid management and energy market participation.</p>
+                    </div>
+
+                    <div class="expertise-item">
+                        <h3>Grid Optimization</h3>
+                        <p>Designing intelligent systems that enhance grid flexibility and reliability through dynamic line rating and adaptive management approaches.</p>
+                    </div>
+
+                    <div class="expertise-item">
+                        <h3>Digital Twin Technology</h3>
+                        <p>Building virtual representations of physical energy infrastructure to simulate, optimize, and monitor real-time performance for enhanced decision-making.</p>
+                    </div>
+
+                    <div class="expertise-item">
+                        <h3>Energy Storage Optimization</h3>
+                        <p>Developing strategies for optimal utilization of battery storage and other energy storage technologies in conjunction with renewable generation.</p>
+                    </div>
+
+                    <div class="expertise-item">
+                        <h3>Transfer Learning Applications</h3>
+                        <p>Applying novel transfer learning techniques to reduce sensor deployment costs and enable affordable large-scale energy infrastructure monitoring.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research">
+                <h2>Research Publications</h2>
+
+                <div class="publication card">
+                    <span class="year">2025</span>
+                    <h3>Improving Ramp Forecasting Accuracy under Class Imbalance</h3>
+                    <div class="authors">Morales-Hernández A., De Caro F., Paldino G.M., Tribel P., Vaccaro A., Bontempi G.</div>
+                    <p>
+                        This research addresses the challenge of predicting sudden changes in wind power generation (ramp events) that can disrupt grid stability. Our approach formulates the problem as a multivariate time series classification task and proposes a novel data preprocessing strategy with EasyEnsemble algorithm to handle class imbalance. The method achieved over 85% accuracy and 88% weighted F1 score, offering a practical solution for renewable energy management.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wind Power</span>
+                        <span class="keyword">Forecasting</span>
+                        <span class="keyword">Machine Learning</span>
+                        <span class="keyword">Grid Stability</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2025</span>
+                    <h3>A Novel Dual-CNN Architecture with Adaptive Persistence for Medium-Term Electricity Load Forecasting</h3>
+                    <div class="authors">Tribel P., Paldino G.M., Morales Hernández A., Bontempi G.</div>
+                    <p>
+                        This paper introduces a dual-CNN architecture for medium-term electricity load forecasting, designed for 30-hour ahead predictions. The model combines two parallel CNNs processing historical load and meteorological data while leveraging both short-term patterns and long-term seasonal effects. Tested on Belgian total load forecasting, our approach consistently outperformed operational forecasts by 20.47% on average, enhancing day-ahead operational planning capabilities.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Load Forecasting</span>
+                        <span class="keyword">Deep Learning</span>
+                        <span class="keyword">Energy Planning</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2024</span>
+                    <h3>PyAWD: A Library for Generating Large Synthetic Datasets of Acoustic Wave Propagation with Devito</h3>
+                    <div class="authors">Tribel P., Bontempi G.</div>
+                    <p>
+                        This paper introduces PyAWD, a Python library for generating high-resolution synthetic datasets that simulate acoustic wave propagation. The library addresses the challenge of sparse seismic data by enabling the creation of customizable 2D and 3D simulations. Our approach demonstrated that machine learning models trained on this synthetic data can effectively retrieve epicenter locations using minimal sensor data, showing potential for cost-efficient monitoring of energy infrastructure.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Synthetic Data</span>
+                        <span class="keyword">Infrastructure Monitoring</span>
+                        <span class="keyword">Sensor Optimization</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2022</span>
+                    <h3>Online learning of windmill time series using Long Short-term Cognitive Networks</h3>
+                    <div class="authors">Morales-Hernández A., Nápoles G., Jastrzebska A., Salgueiro Y., Vanhoof K.</div>
+                    <p>
+                        This research introduces Long Short-term Cognitive Networks (LSTCNs) for forecasting windmill time series in online learning settings. Our model uses a fast, deterministic learning rule that makes it suitable for online learning tasks with large data streams. Compared to traditional approaches, LSTCNs achieved lower forecasting errors while being significantly faster in both training and testing phases, offering a practical solution for real-time monitoring of renewable energy sources.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Online Learning</span>
+                        <span class="keyword">Wind Energy</span>
+                        <span class="keyword">Real-time Forecasting</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2022</span>
+                    <h3>Measuring Wind Turbine Health Using Fuzzy-Concept-Based Drifting Models</h3>
+                    <div class="authors">Jastrzebska A., Morales Hernández A., Nápoles G., Salgueiro Y., Vanhoof K.</div>
+                    <p>
+                        This paper presents novel approaches for monitoring wind turbine health based on fuzzy concept modeling. Unlike existing methods that rely on predictive models to detect anomalies, our approaches use abstract concepts implemented through fuzzy sets to identify performance changes over time. The methodology provides human-interpretable results through linguistic labels, enabling domain experts to easily understand and act on the system's outputs.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wind Turbine Maintenance</span>
+                        <span class="keyword">Health Monitoring</span>
+                        <span class="keyword">Interpretable ML</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2022</span>
+                    <h3>A Digital Twin Approach for Improving Estimation Accuracy in Dynamic Thermal Rating of Transmission Lines</h3>
+                    <div class="authors">Paldino G.M., De Caro F., De Stefani J., Villacci D., Vaccaro A., Bontempi G.</div>
+                    <p>
+                        This research proposes a Digital Twin approach to improve the accuracy of estimating conductor temperatures in power transmission lines. Our machine learning models significantly outperformed the traditional IEEE 738 standard, reducing the Root Mean Squared Error by 60%. The approach requires fewer features than physics-based models while maintaining accuracy, enabling transmission system operators to optimize line management with more accurate temperature estimations.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Digital Twin</span>
+                        <span class="keyword">Power Transmission</span>
+                        <span class="keyword">Grid Optimization</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2021</span>
+                    <h3>DAFT-E: Feature-based Multivariate and Multi-step-ahead Wind Power Forecasting</h3>
+                    <div class="authors">De Caro F., De Stefani J., Vaccaro A., Bontempi G.</div>
+                    <p>
+                        This paper introduces a novel forecasting approach called Dynamic Adaptive Feature-based Temporal Ensemble (DAFT-E) for predicting wind power generation. The method combines extensive feature engineering, fast feature selection, and an ensemble of computationally inexpensive models to achieve accurate forecasts while maintaining reasonable computational efficiency. Tested on multiple wind farm datasets, DAFT-E outperformed traditional methods including deep learning approaches.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wind Power</span>
+                        <span class="keyword">Ensemble Learning</span>
+                        <span class="keyword">Feature Engineering</span>
+                    </div>
+                </div>
+
+                <div class="publication card">
+                    <span class="year">2020</span>
+                    <h3>Robust Assessment of Short-Term Wind Power Forecasting Models on Multiple Time Horizons</h3>
+                    <div class="authors">De Caro F., De Stefani J., Bontempi G., Vaccaro A., Villacci D.</div>
+                    <p>
+                        This research proposes a robust methodology for systematically evaluating various wind power forecasting models across multiple time horizons (1-6 hours ahead). The study presents a comprehensive modeling pipeline and tests various forecasting approaches on data from a wind farm in southern Italy. Our findings show that ensemble forecasting approaches consistently outperformed individual models in terms of accuracy and stability.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wind Power</span>
+                        <span class="keyword">Forecasting Models</span>
+                        <span class="keyword">Model Assessment</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Current Projects</h2>
+
+                <div class="project card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Transfer Learning for Smart Grid Monitoring</h3>
+                        <p>
+                            Development of transfer learning methodologies to reduce the number of required temperature sensors in power transmission lines. Our approach enables cost-effective implementation of Dynamic Thermal Rating systems across urban grid infrastructure, enhancing capacity while maintaining safety.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Adaptive Forecasting for Renewable Integration</h3>
+                        <p>
+                            Implementation of ensemble-based forecasting systems that combine multiple prediction models to improve accuracy and stability for wind and solar energy production. Our forecasting systems adapt to changing environmental conditions and energy consumption patterns in urban settings.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H360c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V67c0 40.3-16 79-44.5 107.5L225.9 256l81.5 81.5C336 366 352 404.7 352 445v19h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h8V445c0-40.3 16-79 44.5-107.5L158.1 256 76.5 174.5C48 146 32 107.3 32 67V48H24C10.7 48 0 37.3 0 24zM110.5 371.5c-8.7 8.7-16.4 18.1-23 28.5h209c-6.6-10.4-14.3-19.8-23-28.5L192 290.1 110.5 371.5zM96 152c6.6 10.4 14.3 19.8 23 28.5L200.5 262l81.5-81.5c8.7-8.7 16.4-18.1 23-28.5H96z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Virtual Power Plant Simulator</h3>
+                        <p>
+                            Development of a Virtual Power Plant simulation platform that generates synthetic weather, solar, and wind data, along with grid load and market prices. The system implements a training pipeline for time series forecasting and optimization of battery management strategies for day-ahead market participation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.7 8.4 166.9 8 160 8s-13.7 .4-20.4 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-
