@@ -9,18 +9,18 @@
         /* Inter Font from Goole Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-        /* VARIABLES */
+        /* VARIABLES - Updated colors to match MLG/ULB blue */
         :root {
-            --accent-color: #47a575;
-            --accent-color-light: #6fcf9d;
-            --accent-color-dark: #337b56;
-            --background-color: #2a2a31;
-            --text-color: #fff;
-            --text-color-muted: #b9b9b9;
-            --card-bg: #35353f;
+            --accent-color: #1a86c7; /* Changed from green to MLG blue */
+            --accent-color-light: #3a9fdf; /* Lighter MLG blue */
+            --accent-color-dark: #0066a1; /* Darker ULB blue */
+            --background-color: #f7f8f8;
+            --text-color: #0066a1;
+            --text-color-muted: #000000;
+            --card-bg: #e1f0f5;
             --card-border: #484851;
 
-            /* spacing */
+            /* spacing - unchanged */
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
@@ -28,7 +28,7 @@
             --space-xl: 64px;
             --space-xxl: 128px;
 
-            /* typography */
+            /* typography - unchanged */
             --font-size-xs: 14px;
             --font-size-sm: 16px;
             --font-size-md: 18px;
@@ -159,7 +159,7 @@
         }
 
         .card {
-            background: linear-gradient(90deg, var(--card-bg) 0%, #3d3b3e 50%, #3d3b3e 50%);
+            background: linear-gradient(180deg, var(--card-bg) 0%, #ffffff 75%, #ffffff 75%);
             border-radius: 20px;
             padding: var(--space-xs) var(--space-lg) var(--space-lg);
             border: 0.5px solid var(--card-border);
@@ -191,7 +191,7 @@
         }
 
         .expertise-item {
-            background-color: var(--card-bg);
+            background-color: linear-gradient(0deg, var(--card-bg) 0%, #ffffff 100%, #ffffff 100%);
             border-radius: 10px;
             padding: var(--space-lg);
             border: 1px solid var(--card-border);
@@ -323,7 +323,7 @@
 
         .button {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: white;
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
@@ -430,7 +430,9 @@
 
         <header>
             <div class="logo">
-                <a href="/">ML<span>G</span> | Energy Intelligence</a>
+                <a href="https://mlg.ulb.ac.be">
+                    <img src="mlg-logo.svg" alt="MLG Logo" height="100" style="vertical-align: middle; margin-right: 10px;">
+                </a>
             </div>
             <nav>
                 <ul>
@@ -442,13 +444,61 @@
             </nav>
         </header>
 
+        <div id="call-for-partners" style="background-color: var(--card-bg); padding: var(--space-lg); border-radius: 20px; margin-top: var(--space-lg); border: 2px solid var(--accent-color);">
+    <h2 style="margin-top: 0; color: var(--accent-color-dark);">Call for Research Partners: Urban Energy Transition</h2>
+    
+    <p style="font-weight: 500;">We're seeking partners for the <strong>INNOVIRIS Research Platform 2026</strong> call on sustainable energy transition in urban environments.</p>
+    
+    <p>This call invites academic consortiums to conduct collaborative, transdisciplinary research aimed at transforming current energy systems toward more sustainable, equitable, and resilient alternatives in urban settings, with special focus on the Brussels-Capital Region.</p>
+    
+    <h3>Proposed Research Themes:</h3>
+    <div class="expertise-grid" style="margin-top: var(--space-md);">
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">Urban Geothermal & Solar Integration</h4>
+            <p>ML-based optimization of locations, performance forecasting, and adaptive infrastructure design for urban geothermal and solar installations.</p>
+        </div>
+        
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">Urban Heat Recovery Systems</h4>
+            <p>Identifying and ranking potential waste heat sources, designing adaptive heat exchange networks based on dynamic usage patterns.</p>
+        </div>
+        
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">District Wind Energy & Digital Twins</h4>
+            <p>Optimizing siting and operation of compact wind turbines in dense urban environments with ML-enhanced wind flow modeling.</p>
+        </div>
+        
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">Microgrids & Decentralized Energy</h4>
+            <p>Real-time optimization of local energy systems with ML-powered management systems for urban microgrids.</p>
+        </div>
+        
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">Predictive Maintenance for Urban Renewables</h4>
+            <p>ML-based digital twins for system health monitoring and anomaly detection trained on urban operating conditions.</p>
+        </div>
+
+        <div class="expertise-item">
+            <h4 style="color: var(--accent-color); margin-top: 0;">Integrated Urban Energy System Orchestration</h4>
+            <p>Developing unified control architectures for coordinating geothermal, solar, wind, and heat recovery systems; modeling resilience and optimizing energy flows across distributed urban energy networks.</p>
+        </div>
+
+    </div>
+    
+    <p style="margin-top: var(--space-md);"><strong>Partner Requirements:</strong> The consortium must include at least one public institution, non-profit organization, or independent business based in Brussels.</p>
+    
+    <div style="text-align: center; margin-top: var(--space-md);">
+        <a href="#contact" class="button" style="font-size: var(--font-size-md);">Become a Research Partner</a>
+    </div>
+</div>
+
         <main>
             <div id="about">
                 <h1>
                     Machine Learning for Sustainable Energy Transition
                 </h1>
                 <p>
-                    The <a href="https://mlg.ulb.ac.be" target="_blank">Machine Learning Group</a> at ULB specializes in developing cutting-edge intelligent systems that address key challenges in energy transition. Our team leverages advanced data analytics, time series forecasting, and machine learning to enable smarter, more resilient, and decentralized energy systems for urban environments.
+                    The <a href="https://mlg.ulb.ac.be" target="_blank"> <b>Machine Learning Group </b></a> at ULB specializes in developing cutting-edge intelligent systems that address key challenges in energy transition. Our team leverages advanced data analytics, time series forecasting, and machine learning to enable smarter, more resilient, and decentralized energy systems for urban environments.
                 </p>
             </div>
 
@@ -603,9 +653,246 @@
                         <span class="keyword">Model Assessment</span>
                     </div>
                 </div>
-            </section>
 
-            <section id="projects">
+
+
+ <div class="publication card">
+                    <span class="year">2012</span>
+                    <h3>Adaptive local learning techniques for multiple-step-ahead wind speed forecasting</h3>
+                    <div class="authors">Vaccaro, Alfredo, Bontempi, Gianluca, Taieb, Souhaib Ben, Villacci, Domenico</div>
+                    <p>
+                        This research applies adaptive local learning methods to the problem of multi-step ahead wind speed forecasting. It aims to improve prediction accuracy by using instance-based techniques that can adapt to the non-stationary nature of wind patterns.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wind Speed Forecasting</span>
+                        <span class="keyword">Time Series</span>
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">Adaptive Methods</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                    </div>
+                </div>
+
+ <div class="publication card">
+                    <span class="year">2012</span>
+                    <h3>Time series prediction for energy-efficient wireless sensors: Applications to environmental monitoring and video games</h3>
+                    <div class="authors">Le Borgne, Yann-Aël, Bontempi, Gianluca</div>
+                    <p>
+                        This paper explores the use of time series prediction techniques to enhance energy efficiency in wireless sensor applications. It presents case studies in environmental monitoring and interactive systems (video games), showing how prediction can reduce data transmission needs.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Wireless Sensors</span>
+                        <span class="keyword">Energy Efficiency</span>
+                        <span class="keyword">Environmental Monitoring</span>
+                    </div>
+                </div>  
+
+ <div class="publication card">
+                    <span class="year">2012</span>
+                    <h3>A review and comparison of strategies for multi-step ahead time series forecasting based on the NN5 forecasting competition</h3>
+                    <div class="authors">Taieb, Souhaib Ben, Bontempi, Gianluca, Atiya, Amir F, Sorjamaa, Antti</div>
+                    <p>
+                        This paper provides a comprehensive review and empirical comparison of various strategies for multi-step ahead time series forecasting. Using data from the NN5 forecasting competition, it evaluates the performance of methods like recursive, direct, and MIMO strategies.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Forecasting</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                        <span class="keyword">Forecasting Strategies</span>
+                        <span class="keyword">NN5 Competition</span>
+                    </div>
+                </div>
+
+             <div class="publication card">
+                    <span class="year">2011</span>
+                    <h3>Recursive multi-step time series forecasting by perturbing data</h3>
+                    <div class="authors">Taieb, Souhaib Ben, Bontempi, Gianluca</div>
+                    <p>
+                        This paper proposes a novel approach for recursive multi-step time series forecasting. The method involves perturbing the input data during the recursive prediction process to potentially improve robustness and accuracy, particularly for longer horizons.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Forecasting</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                        <span class="keyword">Recursive Strategy</span>
+                        <span class="keyword">Data Perturbation</span>
+                    </div>
+                </div>
+
+                 <div class="publication card">
+                    <span class="year">2011</span>
+                    <h3>Conditionally dependent strategies for multiple-step-ahead prediction in local learning</h3>
+                    <div class="authors">Bontempi, Gianluca, Taieb, Souhaib Ben</div>
+                    <p>
+                        This work introduces conditionally dependent strategies within the local learning framework for multi-step ahead prediction. It proposes methods that account for the dependencies between predictions at different future time steps, improving accuracy over independent predictions.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">Conditional Dependence</span>
+                    </div>
+                </div>
+
+                 <div class="publication card">
+                    <span class="year">2010</span>
+                    <h3>Multiple-output modeling for multi-step-ahead time series forecasting</h3>
+                    <div class="authors">Taieb, Souhaib Ben, Sorjamaa, Antti, Bontempi, Gianluca</div>
+                    <p>
+                        This paper focuses on multiple-output modeling techniques for multi-step-ahead time series forecasting. It explores strategies like the MIMO (Multiple-Input Multiple-Output) approach where a single model predicts multiple future values simultaneously, contrasting it with other methods.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Forecasting</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                        <span class="keyword">Multiple Output Models</span>
+                        <span class="keyword">MIMO</span>
+                    </div>
+                </div>
+
+                 <div class="publication card">
+                    <span class="year">2009</span>
+                    <h3>Long-term prediction of time series by combining Direct and MIMO strategies</h3>
+                    <div class="authors">Taieb, Souhaib Ben, Bontempi, Gianluca, Sorjamaa, Antti, Lendasse, Amaury</div>
+                    <p>
+                        This research investigates strategies for long-term time series prediction by comparing and combining Direct and Multi-Input Multi-Output (MIMO) approaches. The study aims to identify effective methods for forecasting far into the future.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Forecasting</span>
+                        <span class="keyword">Long Term Prediction</span>
+                        <span class="keyword">Direct Strategy</span>
+                        <span class="keyword">MIMO Strategy</span>
+                    </div>
+                </div>
+
+
+ <div class="publication card">
+                    <span class="year">2008</span>
+                    <h3>Long term time series prediction with multi-input multi-output local learning</h3>
+                    <div class="authors">Bontempi, Gianluca</div>
+                    <p>
+                        This work explores the use of Multi-Input Multi-Output (MIMO) strategies within a local learning framework for long-term time series prediction. It investigates how instance-based methods can simultaneously predict multiple future steps.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Long Term Forecasting</span>
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">MIMO</span>
+                    </div>
+                </div>
+
+
+
+ <div class="publication card">
+                    <span class="year">2007</span>
+                    <h3>Adaptive model selection for time series prediction in wireless sensor networks</h3>
+                    <div class="authors">Le Borgne, Yann-Aël, Santini, Silvia, Bontempi, Gianluca</div>
+                    <p>
+                        This paper addresses the challenge of resource constraints in wireless sensor networks (WSNs) by proposing an adaptive model selection strategy for time series prediction. The goal is to optimize prediction accuracy while minimizing computational and communication costs in WSNs.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Wireless Sensor Networks</span>
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Adaptive Model Selection</span>
+                        <span class="keyword">Energy Efficiency</span>
+                    </div>
+                </div>
+
+
+
+ <div class="publication card">
+                    <span class="year">2000</span>
+                    <h3>Predicting stock markets in boundary conditions with local models</h3>
+                    <div class="authors">Bontempi, Gianluca, Bertolissi, Edy, Birattari, Mauro</div>
+                    <p>
+                        This study investigates the application of local modeling techniques for predicting stock market behavior, particularly under challenging boundary conditions or market extremes. It explores the effectiveness of instance-based learning in financial time series forecasting.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Stock Market Prediction</span>
+                        <span class="keyword">Financial Forecasting</span>
+                        <span class="keyword">Local Models</span>
+                        <span class="keyword">Time Series</span>
+                    </div>
+                </div>
+
+
+
+ <div class="publication card">
+                    <span class="year">2000</span>
+                    <h3>Local learning techniques for modeling, prediction and control</h3>
+                    <div class="authors">Bontempi, Gianluca</div>
+                    <p>
+                        This PhD thesis provides a comprehensive overview of local learning techniques and their application to modeling, prediction (especially time series), and control problems. It details methodologies and theoretical foundations for instance-based machine learning approaches.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">Machine Learning</span>
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Modeling</span>
+                        <span class="keyword">Control Systems</span>
+                    </div>
+                </div>
+
+
+ <div class="publication card">
+                    <span class="year">2000</span>
+                    <h3>A multi-steap ahead prediction method based on local dynamic properties</h3>
+                    <div class="authors">Bontempi, Gianluca, Birattari, Mauro</div>
+                    <p>
+                        This paper proposes a method for multi-step ahead time series prediction that leverages local dynamic properties of the data. The approach aims to capture time-varying patterns by focusing on localized model estimation.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Multi-step Ahead</span>
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">Dynamic Systems</span>
+                    </div>
+                </div>
+
+ <div class="publication card">
+                    <span class="year">1999</span>
+                    <h3>Local learning for iterated time series prediction</h3>
+                    <div class="authors">Bontempi, Gianluca, Birattari, Mauro, Bersini, Hugues</div>
+                    <p>
+                        This research further develops the concept of local learning for multi-step ahead time series forecasting using an iterated strategy. It focuses on building models based on nearby data points in the input space to make sequential predictions.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Local Learning</span>
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Iterated Forecasting</span>
+                        <span class="keyword">Machine Learning</span>
+                    </div>
+                </div>
+
+ <div class="publication card">
+                    <span class="year">1998</span>
+                    <h3>Lazy learning for iterated time series prediction</h3>
+                    <div class="authors">Bontempi, Gianluca, Birattari, Mauro, Bersini, Hugues</div>
+                    <p>
+                        This paper introduces a lazy learning approach specifically designed for iterated time series prediction. It investigates how local, instance-based methods can be effectively applied to predict multiple steps ahead in time series data by iteratively using previous predictions.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Lazy Learning</span>
+                        <span class="keyword">Time Series Prediction</span>
+                        <span class="keyword">Iterated Forecasting</span>
+                        <span class="keyword">Local Learning</span>
+                    </div>
+                </div>
+
+
+                 <div class="publication card">
+                    <span class="year">1996</span>
+                    <h3>Simulation and forecasting in intermodal container terminal</h3>
+                    <div class="authors">Gambardella, Luca Maria, Bontempi, Gianluca, Taillard, Eric, Romanengo, Davide, Raso, Guido, Piermari, Pietro</div>
+                    <p>
+                        This work explores the use of simulation and forecasting techniques to model and predict operations within intermodal container terminals. It aims to improve efficiency and planning in logistics by applying computational methods to terminal processes.
+                    </p>
+                    <div class="keywords">
+                        <span class="keyword">Simulation</span>
+                        <span class="keyword">Forecasting</span>
+                        <span class="keyword">Logistics</span>
+                        <span class="keyword">Container Terminal</span>
+                    </div>
+                </div>
+
+<section id="projects">
                 <h2>Current Projects</h2>
 
                 <div class="project card">
@@ -644,6 +931,58 @@
                     </div>
                 </div>
 
-                <div class="project card">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.7 8.4 166.9 8 160 8s-13.7 .4-20.4 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-
+            </section>
+            <section id="contact">
+                <h2>Get in Touch</h2>
+                <p>
+                    If you have a project that you'd like to discuss, please get in touch with us at <a
+                        href="mailto:gianluca.bontempi@ulb.be">gianluca.bontempi@ulb.be</a>.
+                </p>
+            </section>
+
+
+        </main>
+
+        <footer>
+            <div class="social">
+              
+                
+                <!-- LINKEDIN -->
+                <a href="https://www.linkedin.com/company/mlg-ulb" target="_blank">
+                    <svg fill="#FFFFFF" height="40px" width="40px" version="1.1" id="Icons"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 32 32" xml:space="preserve">
+                        <path d="M23,0H9C4,0,0,4,0,9v14c0,5,4,9,9,9h14c5,0,9-4,9-9V9C32,4,28,0,23,0z M12,25c0,0.6-0.4,1-1,1H7c-0.6,0-1-0.4-1-1V13
+                   c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1V25z M9,11c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S10.7,11,9,11z M26,25c0,0.6-0.4,1-1,1h-3
+                   c-0.6,0-1-0.4-1-1v-3.5v-1v-2c0-0.8-0.7-1.5-1.5-1.5S18,17.7,18,18.5v2v1V25c0,0.6-0.4,1-1,1h-3c-0.6,0-1-0.4-1-1V13
+                   c0-0.6,0.4-1,1-1h4c0.3,0,0.5,0.1,0.7,0.3c0.6-0.2,1.2-0.3,1.8-0.3c3,0,5.5,2.5,5.5,5.5V25z" />
+                    </svg></a>
+                
+            </div>
+            <p>
+                &copy; 2025 Machine Learning Group. All rights reserved.
+            </p>
+            <p>
+                <a href="https://github.com/ayushsaranGithuB/one-page-portfolios/tree/main">Inspired by this template</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        // Catch all the # links from the nav and make them scroll smoothly to their destinations
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        // loop through the links and set an onclick event to send the user to the correct section in a smooth scroll
+        navLinks.forEach((link) => {
+            link.onclick = (e) => {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute("href"));
+                target.scrollIntoView({
+                    behavior: "smooth",
+                });
+                return false;
+            };
+        });
+    </script>
+</body>
+
+</html>
